@@ -10,7 +10,6 @@ class matriz_cont():
         listax = listaCabeza.cabX
         while listax is not None:
             if(listax.fil_x == posx):
-                print(listax.fil_x)
                 listax.abajo = nuevoNodo
                 nuevoNodo.arriba = listax
                 return listax
@@ -20,7 +19,6 @@ class matriz_cont():
         listay = listaCabeza.cabY
         while listay is not None:
             if(listay.fil_y == posy):
-                print(listay.fil_y)
                 listay.siguiente = nuevoNodo
                 nuevoNodo.anterior = listay
                 return listay
