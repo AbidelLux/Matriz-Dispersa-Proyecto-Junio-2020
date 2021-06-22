@@ -5,7 +5,9 @@
 from matriz import matriz
 from matriz_cont import matriz_cont
 from nodo_matriz import nodo_matriz
-
+from ventana_ui import *
+class MainWindow(QtWidgets.QMainWindow):
+    pass
 if __name__ == '__main__':
     funciones_matriz = matriz()
     func_matriz_cont = matriz_cont()
@@ -51,3 +53,7 @@ if __name__ == '__main__':
     funciones_matriz.ordenar_cab_fila(9)
     print("*******************************")
     funciones_matriz.buscar_y(1)
+    app = QtWidgets.QApplication([])
+    window = MainWindow()
+    window.show()
+    app.exec_()
