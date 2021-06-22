@@ -3,8 +3,8 @@ from nodo_cabezeraY import nodo_cabezeraY
 
 class matriz():
     def __init__(self):
-        self.cabX = nodo_cabezeraX(0)
-        self.cabY= nodo_cabezeraY(0)
+        self.cabX = nodo_cabezeraX(0,"cabx")
+        self.cabY= nodo_cabezeraY(0,"caby")
     def buscar_x(self, X):
         print('recorrer x')
         node = self.cabX
@@ -102,13 +102,13 @@ class matriz():
 #Funciones para inserta en Y
     def insertar_y_final(self,nuevoy):
         if self.cabY is None:
-            nuevo_nodo = nodo_cabezeraY(nuevoy)
+            nuevo_nodo = nodo_cabezeraY(nuevoy,"caby")
             self.cabY = nuevo_nodo
             return
         node = self.cabY
         while node.abajo is not None:
             node = node.abajo
-        nuevo_nodo = nodo_cabezeraY(nuevoy)
+        nuevo_nodo = nodo_cabezeraY(nuevoy,"caby")
         node.abajo = nuevo_nodo
         nuevo_nodo.arriba = node
         print(nuevoy,'fila se agrego con exito')
@@ -125,7 +125,7 @@ class matriz():
             if node is None:
                 print('')
             else:
-                nuevo_nodo = nodo_cabezeraY(nuevoy)
+                nuevo_nodo = nodo_cabezeraY(nuevoy,"caby")
                 nuevo_nodo.abajo = node
                 nuevo_nodo.arriba = node.arriba
                 if node.arriba is not None:
@@ -137,13 +137,13 @@ class matriz():
 
     def insertar_x_final(self,nuevox):
         if self.cabX is None:
-            nuevo_nodo = nodo_cabezeraX(nuevox)
+            nuevo_nodo = nodo_cabezeraX(nuevox,"cabx")
             self.cabX = nuevo_nodo
             return
         node = self.cabX
         while node.siguiente is not None:
             node = node.siguiente
-        nuevo_nodo = nodo_cabezeraX(nuevox)
+        nuevo_nodo = nodo_cabezeraX(nuevox,"cabx")
         node.siguiente = nuevo_nodo
         nuevo_nodo.anterior = node
         print(nuevox,'columna se agrego con exito')
@@ -160,7 +160,7 @@ class matriz():
             if node is None:
                 print('')
             else:
-                nuevo_nodo = nodo_cabezeraX(nuevox)
+                nuevo_nodo = nodo_cabezeraX(nuevox,"cabx")
                 nuevo_nodo.siguiente = node
                 nuevo_nodo.anterior = node.anterior
                 if node.anterior is not None:
